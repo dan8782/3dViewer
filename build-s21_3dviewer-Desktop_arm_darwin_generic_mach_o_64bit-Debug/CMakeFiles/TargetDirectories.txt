@@ -1,0 +1,8 @@
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/s21_3dviewer.dir
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/edit_cache.dir
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/list_install_components.dir
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/install.dir
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/install/local.dir
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/install/strip.dir
+/Users/danilakiva/3dViewer/build-s21_3dviewer-Desktop_arm_darwin_generic_mach_o_64bit-Debug/CMakeFiles/s21_3dviewer_autogen.dir
