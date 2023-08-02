@@ -4,10 +4,12 @@ ifeq ($(shell uname), Linux)
 	TST_LIBS += -lpthread -lrt -lsubunit -lm
 endif
 LIB_NAME = s21_parser
-
+LIBS := -lcheck -lm
 SRCS=$(wildcard parser/*.c data_containers/*.c)
 
 OBJS=$(SRCS:.c=.o)
+
+TESTS := cfiles/test_main.h cfiles/tests/parser_suits.c cfiles/tests/test_main.c
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -27,25 +29,19 @@ install: delete_temp_build recreate_build_dir
 uninstall: 
 	@rm -rf build
 
-tests: clean $(LIB_NAME).a
-	$(CC) $(FLAGS) check.c $(LIB_NAME).a $(TST_LIBS) -o tests
-	./tests
+tests: $(TESTS)
+	@$(CC) $(CFLAGS)  $(LIBS) cfiles/c_libs/*.c $(TESTS) -o test.a
+	@./test.a
 
 add_coverage_flag:
 	$(eval FLAGS += --coverage)
 
-gcov_report: add_coverage_flag tests
-	rm -rf reports/
-	mkdir reports
-	./tests
-	rm -rf check*.gcda check*.gcno
-	gcov -b -l -p -c *.gcno
-	gcovr -o gcov_report.html --html --html-details
-	rm -rf data_containers/*.gcda data_containers/*.gcno
-	rm -rf parser/*.gcda parser/*.gcno
-	mv *html reports/
-	mv *css reports/
-	open reports/gcov_report.html
+gcov_report:
+	@$(CC) --coverage cfiles/tests/*.c cfiles/test_main.h  -o s21_test -lcheck cfiles/c_libs/*.c
+	@./s21_test
+	@lcov -t "s21_test" -o s21_test.info -c -d .
+	@genhtml -o report s21_test.info
+	@open ./report/index.html
 
 dvi:
 	@doxygen conf && mv html documentation
@@ -66,6 +62,11 @@ clean:
 	rm -rf reports/* *.o test *.a *.gcno *.gcda *.gcov *.html *.css
 	rm -rf data_containers/*.gcda data_containers/*.gcno
 	rm -rf parser/*.gcda parser/*.gcno
+	@rm -rf *.o *.a
+	@rm -rf *.gcda *.gcno *.info
+	@rm -rf s21_test report
+	@rm -rf s21_calc s21_test
+	@rm -rf ./build*
 
 
 all: clean tests

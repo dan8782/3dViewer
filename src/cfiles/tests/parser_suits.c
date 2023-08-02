@@ -2,7 +2,7 @@
 // тесты буду в гуу писать, вроде, всё норм работает
 START_TEST(parser_1) {
   struct viwer_input input;
-  input.file_path = "tests/tests_files/2.obj\0";
+  input.file_path = "cfiles/tests/tests_files/2.obj\0";
   struct parser_output output;
   parse_obj_file(input, &output);
   ck_assert_int_eq(output.points_count,3);
@@ -15,7 +15,7 @@ START_TEST(parser_1) {
 
 START_TEST(parser_2) {
   struct viwer_input input;
-  input.file_path = "tests/tests_files/3.obj\0";
+  input.file_path = "cfiles/tests/tests_files/3.obj\0";
   struct parser_output output;
   parse_obj_file(input, &output);
   ck_assert_int_eq(output.points_count,6);

@@ -16,7 +16,6 @@ int parse_obj_file(struct viwer_input input, struct parser_output *output) {
   output->poligons_count = 0;
   output->poligons_value = NULL;
   FILE *file;
-  char ch;
   file = fopen(input.file_path, "r");
   int resut_code = 1;
   // Проверяем, удалось ли открыть файл
@@ -56,7 +55,7 @@ int poligon_handler(struct parser_output *output, char *input_str) {
   char buffer[1024] = "\0";
   while (input_str_len >= input_str_index && result_code) {
     char cure_sign = input_str[input_str_index];
-    if (cure_sign < 58 && cure_sign > 47 ||
+    if ((cure_sign < 58 && cure_sign > 47)||
         (cure_sign == '-' && strlen(buffer) == 0) || cure_sign == '/') {
       append(buffer, cure_sign);
     }
@@ -126,7 +125,7 @@ int point_handler(struct parser_output *output, char *input_str) {
 
   while (input_str_len >= input_str_index && result_code) {
     char cure_sign = input_str[input_str_index];
-    if (cure_sign < 58 && cure_sign > 47 ||
+    if ((cure_sign < 58 && cure_sign > 47) ||
         (cure_sign == '.' && strlen(buffer) > 0 && find(buffer, '.') == -1) ||
         (cure_sign == '-' && strlen(buffer) == 0)) {
       //если знак число или точка(если точек ещё не было),или унарный минус то
@@ -194,7 +193,7 @@ int find(char *input_string, char find_char) {
 
 int slice_string(char *input_string, char *out_string, int begin, int end) {
   //вырезает строку с end(включительно) до begin(не включительно)
-  if (end <= begin || (begin < 0 || end < 0) || begin > strlen(input_string)) {
+  if (end <= begin || (begin < 0 || end < 0) || begin > (int)strlen(input_string)) {
     return 0;
   }
   int result_size = end - begin;
