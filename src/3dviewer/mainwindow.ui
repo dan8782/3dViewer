@@ -30,33 +30,33 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>550</x>
       <y>30</y>
       <width>91</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Translation</string>
+     <string>Перемещение</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>550</x>
       <y>80</y>
       <width>58</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Rotation</string>
+     <string>Поворот</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>550</x>
       <y>130</y>
       <width>58</width>
       <height>16</height>
@@ -76,7 +76,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Choose file</string>
+     <string>Выбрать файл</string>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="doubleSpinBox_translations_x">
@@ -256,7 +256,7 @@
      <rect>
       <x>10</x>
       <y>561</y>
-      <width>978</width>
+      <width>1002</width>
       <height>32</height>
      </rect>
     </property>
@@ -279,7 +279,7 @@
         </size>
        </property>
        <property name="text">
-        <string>File name:</string>
+        <string>Имя файла:</string>
        </property>
       </widget>
      </item>
@@ -330,7 +330,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </size>
        </property>
        <property name="text">
-        <string>Edges:</string>
+        <string>Вершин:</string>
        </property>
       </widget>
      </item>
@@ -368,7 +368,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </size>
        </property>
        <property name="text">
-        <string>Verticles:</string>
+        <string>Ребер:</string>
        </property>
       </widget>
      </item>
