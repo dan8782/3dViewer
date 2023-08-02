@@ -9,7 +9,6 @@ void do_suite(Suite *suite, int *res) {
 int main(void) {
   Suite *test_suites[] = {
       suite_parser(),
-      suite_tranlations(),
   };
   int res = 0;
   for (size_t i = 0; i < ARRAY_SIZE(test_suites); i++) {

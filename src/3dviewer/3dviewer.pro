@@ -10,7 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     ../cfiles/c_libs/parser.c \
-    ../cfiles/c_libs/transformations.c \
     main.cpp \
     mainwindow.cpp \
     myopenglwidget.cpp
